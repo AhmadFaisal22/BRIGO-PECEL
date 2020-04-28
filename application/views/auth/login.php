@@ -17,13 +17,16 @@
                   </div>
 
                   <?=$this->session->flashdata('message');?>
-                  <form class="user">
+                  <form class="user" method="post" action="<?=base_url('auth');?>">
                     <!-- method="post" action=" -->
                     <div class="form-group">
-                      <input type="text" class="form-control form-control-user" id="email" name="email" placeholder="Masukkan Email">
+                      <input type="text" class="form-control form-control-user" id="email" name="email" placeholder="Masukkan Email" value="<?=set_value('email');?>">
+                      <?=form_error('email','<small class="text-danger pl-3">','</small>');?>
                     </div>
+
                     <div class="form-group">
                       <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Password">
+                      <?=form_error('password','<small class="text-danger pl-3">','</small>');?>
                     </div>
                     <div class="text-right">
                     <a class="small" href="#">Forgot Password?</a>
@@ -32,7 +35,7 @@
                       <div class="custom-control custom-checkbox small">
                       </div>
                     </div>
-                    <button type="submit"  class="btn btn-primary btn-user btn-block">
+                    <button type="submit" class="btn btn-primary btn-user btn-block">
                       LOGIN
                    </button><br>
                    <div class="text-center">
