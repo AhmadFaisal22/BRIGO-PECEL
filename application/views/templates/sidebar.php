@@ -42,64 +42,26 @@
           ?>
 
           <?php foreach ($subMenu as $sm ):?>
-            <!-- Nav-Item-Menubar-->
-            <li class="nav-item">
+            <?php if ($title == $sm['title']) :?>
+              <li class="nav-item active">
+            <?php else:?>
+              <li class="nav-item">
+            <?php endif ;?>
               <a class="nav-link" href="<?=base_url ($sm['url']);?>">
                 <i class="<?= $sm['icon'];?>"></i>
                 <span><?= $sm['title'];?></span></a>
             </li>
           <?php endforeach;?>
             <!--Divider-->
-          <hr class="sidebar-divider my-0">
 
         <?php endforeach;?>
-<!-- 
-      <div class="sidebar-heading">
-					Supervisor
-				</div>
-      <li class="nav-item">
-        <a class="nav-link" href="index.html">
-          <i class="fas fa-fw fa-user-lock"></i>
-          <span>SUPERVISOR</span></a>
-      </li>
-      <hr class="sidebar-divider my-0"> -->
+        <hr class="sidebar-divider my-0">
 
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item">
-        <a class="nav-link" href="index.html">
-          <i class="fas fa-fw fa-money-check"></i>
-          <span>ATM</span></a>
-      </li>
-      <hr class="sidebar-divider my-0">
-      <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-server"></i>
-          <span>CRM</span></a>
-      </li>
-
-      <hr class="sidebar-divider my-0">
-      <!-- Nav Item - Tables -->
-      <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-          <i class="fas fa-fw fa-table"></i>
-          <span>EDC</span></a>
-      </li>
-  
-      <hr class="sidebar-divider my-0">
-      <!-- Nav Item - Tables -->
-      <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-          <i class="fas fa-fw fa-chart-bar"></i>
-          <span>CHART</span></a>
-      </li>
-      <hr class="sidebar-divider my-0">
-      <!-- Nav Item - Tables -->
       <li class="nav-item">
         <a class="nav-link" href="<?=base_url('auth/logout')?>">
           <i class="fas fa-fw fa-sign-out-alt"></i>
           <span>Logout</span></a>
-      </li>
+      </li> 
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
