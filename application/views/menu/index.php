@@ -2,52 +2,86 @@
   <div class="container-fluid">
 
 <!-- Page Heading -->
-<h1 class="h3 mb-4 text-gray-800"><?=$title;?></h1>
+ <!-- Begin Page Content -->
+ <div class="container-fluid">
 
-    <div class="row">
-        <div class="col-lg-7">
-        <table class="table">
-            <thead class="thead-dark">
-              <tr>
-                <th scope="col">No.</th>
-                <th scope="col" >TID</th>
-                <th scope="col"class="col-3">Deskripsi</th>
-                <th scope="col">Lokasi</th>
-                <th scope="col">Tanggal</th>
-                <th scope="col">Waktu</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>0743866</td>
-                <td>ATM tidak bisa untuk tarik tunai</td>
-                <td>Semarang</td>
-                <td>22-03-2020</td>
-                <td>09.30</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>0997115</td>
-                <td>ATM error kode C02</td>
-                <td>Semarang</td>
-                <td>23-03-2020</td>
-                <td>15.30</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>56785</td>
-                <td>ATM Offline status code 002</td>
-                <td>Batang</td>
-                <td>25-03-2020</td>
-                <td>12.50</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+<!-- Page Heading -->
+<h1 class="h3 mb-2 text-gray-800"><?=$title;?></h1>
+<p class="mb-4">Automated Teller Machine atau Automatic Teller Machine</p>
 
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-primary">DataTables ATM Error</h6>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead class="thead-dark">
+          <button type="button" class="btn btn-primary"><i class="fas fa-fw fa-plus-square"></i> Tambah Data</button><br>
+          <tr class="text-center">
+            <th>No.</th>
+            <th>TID</th>
+            <th>Deskripsi</th>
+            <th>Tanggal</th>
+            <th>Waktu</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+          <th>No.</th>
+            <th>TID</th>
+            <th>Deskripsi</th>
+            <th>Tanggal</th>
+            <th>Waktu</th>
+            <th>Aksi</th>
+          </tr>
+        </tfoot>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>997160</td>
+            <td>ATM Error muncul kode C02</td>
+            <td>22/03/2020</td>
+            <td>13.50 WIB</td>
+            <td><button type="button" class="btn btn-outline-primary"><i class="fas fa-fw fa-pencil-alt"></i>Edit</button>&nbsp<button type="button" class="btn btn-outline-danger"><i class="fas fa-fw fa-trash-alt"></i>hapus</button></td>
+            
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>997160</td>
+            <td>ATM Error muncul kode C02</td>
+            <td>23/03/2020</td>
+            <td>15.45 WIB</td>
+            <td><button type="button" class="btn btn-outline-primary"><i class="fas fa-fw fa-pencil-alt"></i>Edit</button>&nbsp<button type="button" class="btn btn-outline-danger"><i class="fas fa-fw fa-trash-alt"></i>hapus</button></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>567820</td>
+            <td>ATM tidak bisa transaksi tarik tunai</td>
+            <td>10/04/2020</td>
+            <td>10.50 WIB</td>
+            <td><button type="button" class="btn btn-outline-primary"><i class="fas fa-fw fa-pencil-alt"></i>Edit</button>&nbsp<button type="button" class="btn btn-outline-danger"><i class="fas fa-fw fa-trash-alt"></i>hapus</button></td>
+
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>567820</td>
+            <td>ATM Dispenser Failure</td>
+            <td>15/04/2020</td>
+            <td>20.15 WIB</td>
+            <td><button type="button" class="btn btn-outline-primary"><i class="fas fa-fw fa-pencil-alt"></i>Edit</button>&nbsp<button type="button" class="btn btn-outline-danger"><i class="fas fa-fw fa-trash-alt"></i>hapus</button></td>
+
+          </tr>
+        </tbody>
+      </table>
     </div>
+  </div>
+</div>
+
+</div>
+<!-- /.container-fluid -->
 
 </div>
 <!-- End of Main Content -->
-
