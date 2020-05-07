@@ -38,7 +38,7 @@ class Menu extends CI_Controller {
                 $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
                 Data Berhasil Ditambahkan 
                 </div>');
-            redirect('menu','refresh');
+                redirect('menu','refresh');
             }
         
         }
@@ -47,26 +47,66 @@ class Menu extends CI_Controller {
             $data['title'] = 'CRM';
             $data['user'] = $this->db->get_where('user',['email'=>
             $this->session->userdata('email')])->row_array();
-       
+
+            $data['crm']= $this->db->get('crm')->result_array();
+            
+            $this->form_validation->set_rules('tid','TID','required');
+            $this->form_validation->set_rules('description','Description','required');
+            $this->form_validation->set_rules('tanggal','Tanggal','required');
+            $this->form_validation->set_rules('time','Waktu','required');
+            
+            if ($this->form_validation->run() == false) {
                 $this->load->view('templates/header', $data);
                 $this->load->view('templates/sidebar', $data);
                 $this->load->view('templates/topbar', $data);
                 $this->load->view('menu/crm', $data);
                 $this->load->view('templates/footer');
-        
+            }else{
+                $data = [
+                    'tid' => $this->input->post('tid'),
+                    'description' => $this->input->post('description'),
+                    'tanggal' => $this->input->post('tanggal'),
+                    'time' => $this->input->post('time')
+                ];
+                $this->db->insert('crm',$data);
+                $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+                Data Berhasil Ditambahkan 
+                </div>');
+            redirect('menu/crm','refresh');
+            }
     }
     public function edc()
     {
         $data['title'] = 'EDC';
         $data['user'] = $this->db->get_where('user',['email'=>
         $this->session->userdata('email')])->row_array();
-   
+
+        $data['edc']= $this->db->get('edc')->result_array();
+            
+            $this->form_validation->set_rules('tid','TID','required');
+            $this->form_validation->set_rules('description','Description','required');
+            $this->form_validation->set_rules('tanggal','Tanggal','required');
+            $this->form_validation->set_rules('time','Waktu','required');
+        
+        if ($this->form_validation->run() == false) {
             $this->load->view('templates/header', $data);
             $this->load->view('templates/sidebar', $data);
             $this->load->view('templates/topbar', $data);
             $this->load->view('menu/edc', $data);
             $this->load->view('templates/footer');
-    
+        }else{
+            $data = [
+                'tid' => $this->input->post('tid'),
+                'description' => $this->input->post('description'),
+                'tanggal' => $this->input->post('tanggal'),
+                'waktu' => $this->input->post('time')
+            ];
+            $this->db->insert('edc',$data);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+            Data Berhasil Ditambahkan 
+            </div>');
+        redirect('menu/edc','refresh');
+        }
     }
     public function chart()
     {

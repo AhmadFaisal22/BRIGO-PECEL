@@ -104,5 +104,8 @@ class Auth extends CI_Controller {
             </div>');
                 redirect('auth','refresh');
         }
+        public function blocked(){
+                echo 'Access had been Blocked';
+        }
         
 }
